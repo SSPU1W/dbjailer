@@ -4,5 +4,6 @@ CREATE TABLE jail (
 	J_Cell VARCHAR(5) NOT NULL,
 	Jailer VARCHAR(100) NOT NULL,
 	Jailer_ID VARCHAR(100) NOT NULL,
+	reason VARCHAR(100) NOT NULL,
 	PRIMARY KEY (identifier)
 );
