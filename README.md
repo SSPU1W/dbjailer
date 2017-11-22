@@ -6,7 +6,7 @@
 
 DB Jailer Created by SSPU1W. Saves Jail Time in the DB and players spawn back into the city and serve out the rest of there sentence, now players can't just relog and leave jail.
 
-Worked only with ESX, Contact me if you want it to work with your core and we can talk.
+Works only with ESX, Contact me if you want it to work with your core and we can talk.
 
 THIS VERSION IS FOR DEVELOPMENT TESTS ONLY. IT IS NOT TO BE USED ON A PUBLIC SERVER. FOLLOW THE LISENSE!
 
