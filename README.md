@@ -4,7 +4,7 @@
 
  I post my code on github to help them learn, not for you to break the law by not abiding to the lisense. You may look at my script but copying it in a way I feel is copying is a violation of what you are agreeing to when you download my script. ANYONE seen using my script without my permission will have legal action taken against them. BY DOWNLOADING THIS SCRIPT YOU AGREE TO FOLLOW THE LISENSE AND AGREE TO WHAT THE README FILE SAYS. 
 
-DB Jailer Created by SSPUW. Saves Jail Time in the DB and players spawn back into the city and serve out the rest of there sentence, now players can't just relog and leave jail.
+DB Jailer Created by SSPU1W. Saves Jail Time in the DB and players spawn back into the city and serve out the rest of there sentence, now players can't just relog and leave jail.
 
 Worked only with ESX, Contact me if you want it to work with your core and we can talk.
 
