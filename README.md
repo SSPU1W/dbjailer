@@ -9,3 +9,11 @@ DB Jailer Created by SSPUW. Saves Jail Time in the DB and players spawn back int
 Worked only with ESX, Contact me if you want it to work with your core and we can talk.
 
 THIS VERSION IS FOR DEVELOPMENT TESTS ONLY. IT IS NOT TO BE USED ON A PUBLIC SERVER. FOLLOW THE LISENSE!
+
+# dbjailerv2.0 released 11/22/17
+# CHANGELOG
+Added more features to make the messages look cleaner, added more jailing options. 
+
+# dbjailer3.0 release TBD
+# what will be coming:
+Full NUI rather than just text based commands. 
