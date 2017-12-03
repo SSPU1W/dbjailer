@@ -49,7 +49,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
 						        TriggerClientEvent("pNotify:SendNotification", -1, {
-							    text = "<b style = 'color:#ccff00'>Boilingbroke Penitentiary</b><br/ ><br / br><b style = 'color:#00ff00'> player has been jailed for ".. jT / 60 .. " months for " .. reason.. " </b><br/ ><br / br><b style = 'color:#ccff00'>Jailing Officer: " </b> ",
+							    text = "A Player Has Been Jailed!",
 						            type = "success",
 						            queue = "lmao",
 						            timeout = 7500,
@@ -84,7 +84,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
 
 						        TriggerClientEvent("pNotify:SendNotification", -1, {
-							    text = "<b style = 'color:#ccff00'>Boilingbroke Penitentiary</b><br/ ><br / br><b style = 'color:#00ff00'> has been jailed for ".. jT / 60 .. " months for " .. reason.. " </b><br/ ><br / br><b style = 'color:#ccff00'>Jailing Officer:</b> ",
+							    text = "A Player Has Been Jailed!",
 						            type = "success",
 						            queue = "lmao",
 						            timeout = 7500,
@@ -133,7 +133,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
 
 						        TriggerClientEvent("pNotify:SendNotification", -1, {
-							    text = "<b style = 'color:#ccff00'>Boilingbroke Penitentiary</b><br/ ><br / br><b style = 'color:#00ff00'> has been jailed for ".. jT / 60 .. " months for " .. reason.. " </b><br/ ><br / br><b style = 'color:#ccff00'>Jailing Officer:</b> ",
+							    text = "A Player Has Been Jailed!",
 						            type = "success",
 						            queue = "lmao",
 						            timeout = 7500,
