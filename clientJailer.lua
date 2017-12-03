@@ -30,15 +30,18 @@ AddEventHandler("JP1", function(jT)
 				pP = GetPlayerPed(-1)
 				RemoveAllPedWeapons(pP, true)
 				SetEntityInvincible(pP, true)
-					exports.pNotify:SetQueueMax("left", 1)
-
-    				
-
 				if IsPedInAnyVehicle(pP, false) then
 					ClearPedTasksImmediately(pP)
 				end
-				if jT % 30 == 0 then
-					TriggerEvent('chatMessage', 'SYSTEM', { 255, 0, 0 }, jT .." seconds until release.")
+				if jT % 60 == 0 then
+				exports.pNotify:SetQueueMax("left", 1)
+			        exports.pNotify:SendNotification({
+			            text = "You have " .. jT / 60 .. " months left until release." ,
+			            type = "error",
+			            timeout = math.random(1000, 10000),
+			            layout = "centerLeft",
+			            queue = "left"
+			        })
 				end
 				Citizen.Wait(500)
 				local pL = GetEntityCoords(pP, true)
@@ -133,8 +136,6 @@ AddEventHandler("JP3", function(jT)
 				pP = GetPlayerPed(-1)
 				RemoveAllPedWeapons(pP, true)
 				SetEntityInvincible(pP, true)
-				exports.pNotify:SendNotification({text = "Vehicle unlocked", type = "success", timeout = 200, layout = "centerRight", queue = "right"})
-				end
 				if IsPedInAnyVehicle(pP, false) then
 					ClearPedTasksImmediately(pP)
 				end
