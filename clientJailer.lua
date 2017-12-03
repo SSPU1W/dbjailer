@@ -30,18 +30,15 @@ AddEventHandler("JP1", function(jT)
 				pP = GetPlayerPed(-1)
 				RemoveAllPedWeapons(pP, true)
 				SetEntityInvincible(pP, true)
+					exports.pNotify:SetQueueMax("left", 1)
+
+    				
+
 				if IsPedInAnyVehicle(pP, false) then
 					ClearPedTasksImmediately(pP)
 				end
-				if jT % 60 == 0 then
-				exports.pNotify:SetQueueMax("left", 1)
-			        exports.pNotify:SendNotification({
-			            text = "You have " .. jT / 60 .. " months left until release." ,
-			            type = "error",
-			            timeout = math.random(1000, 10000),
-			            layout = "centerLeft",
-			            queue = "left"
-			        })
+				if jT % 30 == 0 then
+					TriggerEvent('chatMessage', 'SYSTEM', { 255, 0, 0 }, jT .." seconds until release.")
 				end
 				Citizen.Wait(500)
 				local pL = GetEntityCoords(pP, true)
@@ -51,18 +48,11 @@ AddEventHandler("JP1", function(jT)
 					SetEntityCoords(pP, 459.5500793457, -994.46508789063, 23.914855957031)
 					if D > 4 then
 						jT = jT + 60
-						if jT > 4500 then
-							jT = 4500
+						if jT > 1500 then
+							jT = 1500
 						end
 						Citizen.Trace('GUESS I TRIED ESCAPING')
-						exports.pNotify:SetQueueMax("left", 2)
-					        exports.pNotify:SendNotification({
-					            text = "Your jail time has been increased to ".. jT / 60 .. " for attempted escape!" ,
-					            type = "error",
-					            timeout = math.random(1000, 10000),
-					            layout = "centerLeft",
-					            queue = "left"
-					        })
+						TriggerEvent('chatMessage', 'COURT', { 255, 0, 0 }, "Jail time increased for attempted escape!")
 					end
 				end
 				jT = jT - 0.5
@@ -98,15 +88,8 @@ AddEventHandler("JP2", function(jT)
 				if IsPedInAnyVehicle(pP, false) then
 					ClearPedTasksImmediately(pP)
 				end
-				if jT % 60 == 0 then
-				exports.pNotify:SetQueueMax("left", 1)
-			        exports.pNotify:SendNotification({
-			            text = "You have " .. jT / 60 .. " months left until release." ,
-			            type = "error",
-			            timeout = math.random(1000, 10000),
-			            layout = "centerLeft",
-			            queue = "left"
-			        })
+				if jT % 30 == 0 then
+					TriggerEvent('chatMessage', 'SYSTEM', { 255, 0, 0 }, jT .." seconds until release.")
 				end
 				Citizen.Wait(500)
 				local pL = GetEntityCoords(pP, true)
@@ -115,17 +98,10 @@ AddEventHandler("JP2", function(jT)
 					SetEntityCoords(pP, 458.41693115234, -997.93572998047, 23.914854049683)
 					if D > 4 then
 						jT = jT + 60
-						if jT > 4500 then
-							jT = 4500
+						if jT > 1500 then
+							jT = 1500
 						end
-							exports.pNotify:SetQueueMax("left", 2)
-					        exports.pNotify:SendNotification({
-					            text = "Your jail time has been increased to ".. jT / 60 .. " for attempted escape!" ,
-					            type = "error",
-					            timeout = math.random(1000, 10000),
-					            layout = "centerLeft",
-					            queue = "left"
-					        })
+						TriggerEvent('chatMessage', 'COURT', { 255, 0, 0 }, "Your time has been increased for attempted escape!")
 					end
 				end
 				jT = jT - 0.5
@@ -157,18 +133,13 @@ AddEventHandler("JP3", function(jT)
 				pP = GetPlayerPed(-1)
 				RemoveAllPedWeapons(pP, true)
 				SetEntityInvincible(pP, true)
+				exports.pNotify:SendNotification({text = "Vehicle unlocked", type = "success", timeout = 200, layout = "centerRight", queue = "right"})
+				end
 				if IsPedInAnyVehicle(pP, false) then
 					ClearPedTasksImmediately(pP)
 				end
-				if jT % 60 == 0 then
-				exports.pNotify:SetQueueMax("left", 1)
-			        exports.pNotify:SendNotification({
-			            text = "You have " .. jT / 60 .. " months left until release." ,
-			            type = "error",
-			            timeout = math.random(1000, 10000),
-			            layout = "centerLeft",
-			            queue = "left"
-			        })
+				if jT % 30 == 0 then
+					TriggerEvent('chatMessage', 'SYSTEM', { 255, 0, 0 }, jT .." seconds until release.")
 				end
 				Citizen.Wait(500)
 				local pL = GetEntityCoords(pP, true)
@@ -177,17 +148,10 @@ AddEventHandler("JP3", function(jT)
 					SetEntityCoords(pP, 458.29275512695, -1001.5576782227, 23.914852142334)
 					if D > 4 then
 						jT = jT + 60
-						if jT > 4500 then
-							jT = 4500
+						if jT > 1500 then
+							jT = 1500
 						end
-						exports.pNotify:SetQueueMax("left", 2)
-					        exports.pNotify:SendNotification({
-					            text = "Your jail time has been increased to ".. jT / 60 .. " for attempted escape!" ,
-					            type = "error",
-					            timeout = math.random(1000, 10000),
-					            layout = "centerLeft",
-					            queue = "left"
-					        })
+						TriggerEvent('chatMessage', 'COURT', { 255, 0, 0 }, "Your time has increased for attempted escape!")
 					end
 				end
 				jT = jT - 0.5
@@ -195,68 +159,6 @@ AddEventHandler("JP3", function(jT)
 			TriggerServerEvent('JailReleaseTime') -- UDPATE DB TO RELESE PLAYER
 			TriggerServerEvent('chatMessageEntered', "SYSTEM", { 255, 0, 0 }, GetPlayerName(PlayerId()) .." has been released from jail.")
 			SetEntityCoords(pP, 432.95864868164, -981.41455078125, 29.710334777832)
-			cJ = false
-			SetEntityInvincible(pP, false)
-		end)
-	end
-end)
-
-RegisterNetEvent("JP4")
-AddEventHandler("JP4", function(jT)
-	if cJ == true then
-		return
-	end
-	local pP = GetPlayerPed(-1)
-	if DoesEntityExist(pP) then
-		
-		Citizen.CreateThread(function()
-			local playerOldLoc = GetEntityCoords(pP, true)
-			SetEntityCoords(pP, 1677.233, 2658.618, 45.216)-- {x = 458.29275512695,y = -1001.5576782227,z = 23.914852142334 },
-			cJ = true
-			eJE = false
-			while jT > 0 and not eJE do
-				timecheck(jT)
-				pP = GetPlayerPed(-1)
-				RemoveAllPedWeapons(pP, true)
-				SetEntityInvincible(pP, true)
-				if IsPedInAnyVehicle(pP, false) then
-					ClearPedTasksImmediately(pP)
-				end
-				if jT % 60 == 0 then
-				exports.pNotify:SetQueueMax("left", 1)
-			        exports.pNotify:SendNotification({
-			            text = "You have " .. jT / 60 .. " months left until release." ,
-			            type = "error",
-			            timeout = math.random(1000, 10000),
-			            layout = "centerLeft",
-			            queue = "left"
-			        })
-				end
-				Citizen.Wait(500)
-				local pL = GetEntityCoords(pP, true)
-				local D = Vdist(1677.233, 2658.618, 45.216, pL['x'], pL['y'], pL['z'])
-				if D > 60 then
-					SetEntityCoords(pP, 1677.233, 2658.618, 45.216)
-					if D > 62.50 then
-						jT = jT + 60
-						if jT > 4500 then
-							jT = 4500
-						end
-						exports.pNotify:SetQueueMax("left", 2)
-					        exports.pNotify:SendNotification({
-					            text = "Your jail time has been increased to ".. jT / 60 .. " for attempted escape!" ,
-					            type = "error",
-					            timeout = math.random(1000, 10000),
-					            layout = "centerLeft",
-					            queue = "left"
-					        })
-					end
-				end
-				jT = jT - 0.5
-			end
-			TriggerServerEvent('JailReleaseTime') -- UDPATE DB TO RELESE PLAYER
-			TriggerServerEvent('chatMessageEntered', "SYSTEM", { 255, 0, 0 }, GetPlayerName(PlayerId()) .." has been released from jail.")
-			SetEntityCoords(pP, 1855.807, 2601.949, 45.323)
 			cJ = false
 			SetEntityInvincible(pP, false)
 		end)
