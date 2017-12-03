@@ -48,13 +48,8 @@ AddEventHandler('chatMessage', function(source, n, message)
 					TriggerClientEvent("JP1", tPID, jT)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
-			        local userSource = source
-					TriggerEvent('modest:getCharacterFromId', userSource, function(character)
-						TriggerEvent('modest:getCharacterFromId', tPID, function(characters)
-							name = character.first_name.." "..character.last_name
-							names = characters.first_name.." "..characters.last_name
 						        TriggerClientEvent("pNotify:SendNotification", -1, {
-									text = "<b style = 'color:#ccff00'>Boilingbroke Penitentiary</b><br/ ><br / br><b style = 'color:#00ff00'>" .. names .. " has been jailed for ".. jT / 60 .. " months for " .. reason.. " </b><br/ ><br / br><b style = 'color:#ccff00'>Jailing Officer: "  .. name .. "</b> ",
+									text = "<b style = 'color:#ccff00'>Boilingbroke Penitentiary</b><br/ ><br / br><b style = 'color:#00ff00'> player has been jailed for ".. jT / 60 .. " months for " .. reason.. " </b><br/ ><br / br><b style = 'color:#ccff00'>Jailing Officer: " </b> ",
 						            type = "success",
 						            queue = "lmao",
 						            timeout = 7500,
@@ -87,13 +82,9 @@ AddEventHandler('chatMessage', function(source, n, message)
 					TriggerClientEvent("JP2", tPID, jT)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
-			        local userSource = source
-					TriggerEvent('modest:getCharacterFromId', userSource, function(character)
-						TriggerEvent('modest:getCharacterFromId', tPID, function(characters)
-							name = character.first_name.." "..character.last_name
-							names = characters.first_name.." "..characters.last_name
+
 						        TriggerClientEvent("pNotify:SendNotification", -1, {
-									text = "<b style = 'color:#ccff00'>Boilingbroke Penitentiary</b><br/ ><br / br><b style = 'color:#00ff00'>" .. names .. " has been jailed for ".. jT / 60 .. " months for " .. reason.. " </b><br/ ><br / br><b style = 'color:#ccff00'>Jailing Officer: "  .. name .. "</b> ",
+									text = "<b style = 'color:#ccff00'>Boilingbroke Penitentiary</b><br/ ><br / br><b style = 'color:#00ff00'> has been jailed for ".. jT / 60 .. " months for " .. reason.. " </b><br/ ><br / br><b style = 'color:#ccff00'>Jailing Officer:</b> ",
 						            type = "success",
 						            queue = "lmao",
 						            timeout = 7500,
@@ -140,13 +131,9 @@ AddEventHandler('chatMessage', function(source, n, message)
 					TriggerClientEvent("JP3", tPID, jT)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
-			        local userSource = source
-					TriggerEvent('modest:getCharacterFromId', userSource, function(character)
-						TriggerEvent('modest:getCharacterFromId', tPID, function(characters)
-							name = character.first_name.." "..character.last_name
-							names = characters.first_name.." "..characters.last_name
+
 						        TriggerClientEvent("pNotify:SendNotification", -1, {
-									text = "<b style = 'color:#ccff00'>Boilingbroke Penitentiary</b><br/ ><br / br><b style = 'color:#00ff00'>" .. names .. " has been jailed for ".. jT / 60 .. " months for " .. reason.. " </b><br/ ><br / br><b style = 'color:#ccff00'>Jailing Officer: "  .. name .. "</b> ",
+									text = "<b style = 'color:#ccff00'>Boilingbroke Penitentiary</b><br/ ><br / br><b style = 'color:#00ff00'> has been jailed for ".. jT / 60 .. " months for " .. reason.. " </b><br/ ><br / br><b style = 'color:#ccff00'>Jailing Officer:</b> ",
 						            type = "success",
 						            queue = "lmao",
 						            timeout = 7500,
