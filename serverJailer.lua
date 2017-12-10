@@ -47,16 +47,6 @@ AddEventHandler('chatMessage', function(source, n, message)
 					MySQL.Async.execute("INSERT INTO jail (identifier,J_Time,J_Cell,Jailer,Jailer_ID, reason) VALUES (@Identifier,@J_Time,@J_Cell,@JAILER,@JID, @Reason)", {['@identifier'] = identifier, ['@J_Time'] = jT, ['@J_Cell'] = "JP1", ['@JAILER'] = name, ['@JID'] = id, ['@reason'] = reason})
 					TriggerClientEvent("JP1", tPID, jT)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
-					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
-						        TriggerClientEvent("pNotify:SendNotification", -1, {
-							    text = "A Player Has Been Jailed!",
-						            type = "success",
-						            queue = "lmao",
-						            timeout = 7500,
-						            layout = "bottomRight"
-						        })
-						end)
-					end)
 				end
 			else
 				TriggerClientEvent('chatMessage', -1, 'SYSTEM', { 255, 0, 0 }, "You do not have the right to put people in jail!")
@@ -82,17 +72,6 @@ AddEventHandler('chatMessage', function(source, n, message)
 					TriggerClientEvent("JP2", tPID, jT)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
-
-						        TriggerClientEvent("pNotify:SendNotification", -1, {
-							    text = "A Player Has Been Jailed!",
-						            type = "success",
-						            queue = "lmao",
-						            timeout = 7500,
-						            layout = "bottomRight"
-						        })
-						end)
-					end)
-
 				end
 			else
 				TriggerClientEvent('chatMessage', -1, 'SYSTEM', { 255, 0, 0 }, "You do not have the right to put people in jail!")
@@ -131,16 +110,6 @@ AddEventHandler('chatMessage', function(source, n, message)
 					TriggerClientEvent("JP3", tPID, jT)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
-
-						        TriggerClientEvent("pNotify:SendNotification", -1, {
-							    text = "A Player Has Been Jailed!",
-						            type = "success",
-						            queue = "lmao",
-						            timeout = 7500,
-						            layout = "bottomRight"
-						        })
-						end)
-					end)
 				end
 			else
 				TriggerClientEvent('chatMessage', -1, 'SYSTEM', { 255, 0, 0 }, "You do not have the right to put people in jail!")
