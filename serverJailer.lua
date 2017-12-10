@@ -1,7 +1,7 @@
 
 ESX 				= nil
 local defaultsecs   = 300
-local maxsecs 		= 4000
+local maxsecs 		= 9999
 
 -----------------------------
 
@@ -33,7 +33,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 				local tPID = tonumber(cm[2])
 				local jT = defaultsecs
 					if cm[3] ~= nil then
-						jT = tonumber(cm[3])				
+						jT = tonumber(cm[3]) * 60					
 					end
 				local reason = tostring(cm[4])
 				if jT > maxsecs then
@@ -47,6 +47,13 @@ AddEventHandler('chatMessage', function(source, n, message)
 					MySQL.Async.execute("INSERT INTO jail (identifier,J_Time,J_Cell,Jailer,Jailer_ID, reason) VALUES (@Identifier,@J_Time,@J_Cell,@JAILER,@JID, @Reason)", {['@identifier'] = identifier, ['@J_Time'] = jT, ['@J_Cell'] = "JP1", ['@JAILER'] = name, ['@JID'] = id, ['@reason'] = reason})
 					TriggerClientEvent("JP1", tPID, jT)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
+					TriggerClientEvent("pNotify:SendNotification", tPID, {
+						text = "You have been jailed!",
+						type = "error",
+						queue = "lmao",
+						timeout = 10000,
+						layout = "centerLeft"
+					})
 				end
 			else
 				TriggerClientEvent('chatMessage', -1, 'SYSTEM', { 255, 0, 0 }, "You do not have the right to put people in jail!")
@@ -57,7 +64,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 				local tPID = tonumber(cm[2])
 				local jT = defaultsecs
 					if cm[3] ~= nil then
-						jT = tonumber(cm[3])				
+						jT = tonumber(cm[3]) * 60			
 					end
 				local reason = tostring(cm[4])
 				if jT > maxsecs then
@@ -72,6 +79,13 @@ AddEventHandler('chatMessage', function(source, n, message)
 					TriggerClientEvent("JP2", tPID, jT)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
+					TriggerClientEvent("pNotify:SendNotification", tPID, {
+						text = "You have been jailed!",
+						type = "error",
+						queue = "lmao",
+						timeout = 10000,
+						layout = "centerLeft"
+					})
 				end
 			else
 				TriggerClientEvent('chatMessage', -1, 'SYSTEM', { 255, 0, 0 }, "You do not have the right to put people in jail!")
@@ -83,8 +97,14 @@ AddEventHandler('chatMessage', function(source, n, message)
 				local fine = tonumber(cm[3])
 				local xPlayer = ESX.GetPlayerFromId(tPID)
 				xPlayer.removeMoney(fine) 
-				TriggerClientEvent('chatMessage', tPID, 'LSPD', { 0, 0, 255 }, "You have been fined!")
 				TriggerClientEvent('chatMessage', -1, 'LSPD', { 0, 0, 255 }, "ID "..tPID.." Has Been Fined ".. fine.." Dollars!")
+				TriggerClientEvent("pNotify:SendNotification", tPID, {
+					text = "You have been fined $"..fine,
+					type = "error",
+					queue = "lmao",
+					timeout = 10000,
+					layout = "centerLeft"
+				})
 			else
 				TriggerClientEvent('chatMessage', -1, 'SYSTEM', { 255, 0, 0 }, "You do not have the right to fine people!")
 			end
@@ -95,7 +115,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 				local tPID = tonumber(cm[2])
 				local jT = defaultsecs
 					if cm[3] ~= nil then
-						jT = tonumber(cm[3])				
+						jT = tonumber(cm[3]) * 60					
 					end
 				local reason = tostring(cm[4])
 				if jT > maxsecs then
@@ -110,6 +130,13 @@ AddEventHandler('chatMessage', function(source, n, message)
 					TriggerClientEvent("JP3", tPID, jT)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
+					TriggerClientEvent("pNotify:SendNotification", tPID, {
+						text = "You have been jailed!",
+						type = "error",
+						queue = "lmao",
+						timeout = 10000,
+						layout = "centerLeft"
+					})
 				end
 			else
 				TriggerClientEvent('chatMessage', -1, 'SYSTEM', { 255, 0, 0 }, "You do not have the right to put people in jail!")
