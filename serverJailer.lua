@@ -90,6 +90,39 @@ AddEventHandler('chatMessage', function(source, n, message)
 			else
 				TriggerClientEvent('chatMessage', -1, 'SYSTEM', { 255, 0, 0 }, "You do not have the right to put people in jail!")
 			end
+			
+		elseif cm[1] == "/jail4" then
+			if xPlayer.job.name == 'police' then
+				CancelEvent()
+				local tPID = tonumber(cm[2])
+				local jT = defaultsecs
+					if cm[3] ~= nil then
+						jT = tonumber(cm[3]) * 60			
+					end
+				local reason = tostring(cm[4])
+				if jT > maxsecs then
+					jT = maxsecs
+				end
+				if GetPlayerName(tPID) ~= nil then
+					print("Put in Prison: ".. GetPlayerName(tPID).. " for ".. jT .." secs - entry done by ".. GetPlayerName(source))
+					local identifier = GetPlayerIdentifiers(tPID)[1]
+					local name = GetPlayerName(source)
+					local id = GetPlayerIdentifiers(source)[1]
+					MySQL.Async.execute("INSERT INTO jail (identifier,J_Time,J_Cell,Jailer,Jailer_ID, reason) VALUES (@Identifier,@J_Time,@J_Cell,@JAILER,@JID, @Reason)", {['@identifier'] = identifier, ['@J_Time'] = jT, ['@J_Cell'] = "JP4", ['@JAILER'] = name, ['@JID'] = id, ['@reason'] = reason})
+					TriggerClientEvent("JP2", tPID, jT)
+					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
+					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
+					TriggerClientEvent("pNotify:SendNotification", tPID, {
+						text = "You have been jailed!",
+						type = "error",
+						queue = "lmao",
+						timeout = 10000,
+						layout = "centerLeft"
+					})
+				end
+			else
+				TriggerClientEvent('chatMessage', -1, 'SYSTEM', { 255, 0, 0 }, "You do not have the right to put people in jail!")
+			end
 		elseif cm[1] == "/fine" then
 			if xPlayer.job.name == 'police' then
 				CancelEvent()
