@@ -109,7 +109,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 					local name = GetPlayerName(source)
 					local id = GetPlayerIdentifiers(source)[1]
 					MySQL.Async.execute("INSERT INTO jail (identifier,J_Time,J_Cell,Jailer,Jailer_ID, reason) VALUES (@Identifier,@J_Time,@J_Cell,@JAILER,@JID, @Reason)", {['@identifier'] = identifier, ['@J_Time'] = jT, ['@J_Cell'] = "JP4", ['@JAILER'] = name, ['@JID'] = id, ['@reason'] = reason})
-					TriggerClientEvent("JP2", tPID, jT)
+					TriggerClientEvent("JP4", tPID, jT)
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. jT ..' secs')
 					TriggerClientEvent('chatMessage', -1, 'COURT', { 255, 0, 0 }, GetPlayerName(tPID) ..' is in prison for '.. reason ..'.')
 					TriggerClientEvent("pNotify:SendNotification", tPID, {
