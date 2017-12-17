@@ -1,5 +1,5 @@
 # dbjailer
-# Modified script. I added SQL and pNotify into this script and a detection system, so if you leave the server while in jail it will put you back in jail. Also added a 4th jail that will send you back if you leave. Also I added a fine system. Using /jail4 will send you to big prison. Jager Bom [dev Oasis Island] made the orginal i just added more things to make it work with the database and made it a lot better in general From hi script I used this: The /jail command and the only cops can jail. Everything else I did.
+# Modified script. I added SQL and pNotify into this script and a detection system, so if you leave the server while in jail it will put you back in jail. Also added a 4th jail that will send you back if you leave. Also I added a fine system. Using /jail4 will send you to big prison. Jager Bom [dev Oasis Island] made the orginal i just added more things to make it work with the database and made it a lot better in general, I did all the hard stuff. From his script I used this: The /jail that puts you inside of the jail and the only cops can jail. Everything else I did.
 
 How to use script:
 /jail1 id time reason 
