@@ -3,6 +3,9 @@
 
 How to use script:
 /jail1 id time reason 
+/jail2 id time reason 
+/jail3 id time reason 
+/jail4 id time reason 
 
 
 the reason must be without spaces. For example: GTA|Fleeing| you cannot do this: GTA Fleeing. 
