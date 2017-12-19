@@ -1,6 +1,6 @@
 # dbjailer
-#  Released with help from Jager Bom. 
-# I coded the SQL, pNotify, fine system, jail4(not in atm), and cleaned up the code. Jager helped me with changing the PED Coords, and doing the line of code that ensures only cops can use the command. 
+#  Released with help from Jager Bom and Albo1125
+# I coded the SQL, pNotify, fine system, jail4(not in atm), and cleaned up the code. Jager helped me with changing the PED Coords, and doing the line of code that ensures only cops can use the command.  Albo1125 made the orginal script which you can find it here https://forum.fivem.net/t/release-fx-jailer-1-1-0-0/41963
 
 How to use script:
 /jail1 id time reason 
