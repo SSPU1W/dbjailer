@@ -19,7 +19,7 @@ AddEventHandler("JP1", function(jT)
 	end
 	local pP = GetPlayerPed(-1)
 	if DoesEntityExist(pP) then
-		
+			
 		Citizen.CreateThread(function()
 			local playerOldLoc = GetEntityCoords(pP, true)
 			SetEntityCoords(pP, 459.5500793457, -994.46508789063, 23.914855957031)--{x = 459.5500793457,y = -994.46508789063,z = 23.914855957031 },
@@ -118,53 +118,6 @@ AddEventHandler("JP2", function(jT)
 	end
 end)
 
-RegisterNetEvent("JP4")
-AddEventHandler("JP4", function(jT)
-	if cJ == true then
-		return
-	end
-	local pP = GetPlayerPed(-1)
-	if DoesEntityExist(pP) then
-		
-		Citizen.CreateThread(function()
-			local playerOldLoc = GetEntityCoords(pP, true)
-			SetEntityCoords(pP, 1680.31, 2512.3, 45.216)-- {x = 458.41693115234,y = -997.93572998047,z = 23.914854049683 },
-			cJ = true
-			eJE = false
-			while jT > 0 and not eJE do
-				timecheck(jT)
-				pP = GetPlayerPed(-1)
-				RemoveAllPedWeapons(pP, true)
-				SetEntityInvincible(pP, true)
-				if IsPedInAnyVehicle(pP, false) then
-					ClearPedTasksImmediately(pP)
-				end
-				if jT % 30 == 0 then
-					TriggerEvent('chatMessage', 'SYSTEM', { 255, 0, 0 }, jT .." seconds until release.")
-				end
-				Citizen.Wait(500)
-				local pL = GetEntityCoords(pP, true)
-				local D = Vdist(1680.31, 2512.3, 45.216, pL['x'], pL['y'], pL['z'])
-				if D > 2 then
-					SetEntityCoords(pP, 1680.31, 2512.3, 45.216)
-					if D > 4 then
-						jT = jT + 60
-						if jT > 1500 then
-							jT = 1500
-						end
-						TriggerEvent('chatMessage', 'COURT', { 255, 0, 0 }, "Your time has been increased for attempted escape!")
-					end
-				end
-				jT = jT - 0.5
-			end
-			TriggerServerEvent('JailReleaseTime') -- UDPATE DB TO RELESE PLAYER
-			TriggerServerEvent('chatMessageEntered', "SYSTEM", { 255, 0, 0 }, GetPlayerName(PlayerId()) .." was released from prison.")
-			SetEntityCoords(pP, 432.95864868164, 1853.31, 2607.02, 45.216)
-			cJ = false
-			SetEntityInvincible(pP, false)
-		end)
-	end
-end)
 
 RegisterNetEvent("JP3")
 AddEventHandler("JP3", function(jT)
