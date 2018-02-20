@@ -20,8 +20,10 @@ AddEventHandler('chatMessage', function(source, n, message)
 				CancelEvent()
 				local tPID = tonumber(cm[2])
 				if GetPlayerName(tPID) ~= nil then
-					print("released ".. GetPlayerName(tPID).. " by ".. GetPlayerName(source))
+					print("".. GetPlayerName(tPID).. " for ".. GetPlayerName(source))
 					TriggerClientEvent("UnJP", tPID)
+					TriggerEvent("JailRelease", tPID)
+					newTime = 0
 				end
 				TriggerEvent('JailRelease', tPID)
 			else
